@@ -1,55 +1,71 @@
 package hh.swd20.bookstore.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	private String title;
 	private String author;
-	private int year;
-	private int isbn;
-	private double price;
+	private String year;
+	private String isbn;
+	private String price;
 	
 	public Book() {
 		
 		this.title = null;
 		this.author = null;
-		this.year = 0;
-		this.isbn = 0;
-		this.price = 0;
+		this.year = null;
+		this.isbn = null;
+		this.price = null;
 		
 	}
 	
-	public Book (String title, String author, int year, int isbn, double price) {
+	public Book (String title, String author, String string, String string2, String string3) {
 		this.title = title;
 		this.author = author;
-		this.year = year;
-		this.isbn = isbn;
-		this.price = price;
+		this.year = string;
+		this.isbn = string2;
+		this.price = string3;
 		
+	}
+	public void setId (Long id) {
+		this.id = id;
 	}
 	
 	public void setTitle (String title) {
 		this.title = title;
 		
 	}
-
+	
 	public void setAuthor (String author) {
 		this.author = author;
 		
 	}
 	
-	public void setYear (int year) {
+	public void setYear (String year) {
 		this.year = year;
 		
 	}
 	
-	public void setIsbn (int isbn) {
+	public void setIsbn (String isbn) {
 		this.isbn = isbn;
 		
 	}
 	
-	public void setPrice (double price) {
+	public void setPrice (String price) {
 		this.price = price;
 		
+	}
+	public Long getId() {
+		return id;
+	
 	}
 	
 	public String getTitle() {
@@ -62,17 +78,17 @@ public class Book {
 		
 	}
 	
-	public int getYear() {
+	public String getYear() {
 		return year;
 		
 	}
 	
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 		
 	}
 	
-	public double getPrice() {
+	public String getPrice() {
 		return price;
 	}
 	
